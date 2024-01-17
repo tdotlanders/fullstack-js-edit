@@ -8,6 +8,7 @@ import ConditionalRenderingPage from "./pages/06-conditional-rendering";
 import ListKeysPage from "./pages/07-lists-keys";
 import FormsPage from "./pages/08-forms";
 import ExercisesPage from "./pages/exercises";
+import TodoListPage from "./pages/exercises/to-do-list";
 
 export const ROUTES_LIST = [
   {
@@ -58,5 +59,10 @@ export const ROUTES_LIST = [
     title: "Exercises",
     path: "/exercises",
     element: <ExercisesPage />,
+  },
+  {
+    title: "Exercises - todo List",
+    path: "/exercises/todo-list",
+    element: <TodoListPage />,
   },
 ];

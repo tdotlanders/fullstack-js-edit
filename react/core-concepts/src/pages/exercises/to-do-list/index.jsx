@@ -4,7 +4,7 @@ function TodoListPage() {
   const [inputValue, setInputValue] = useState("");
   const [items, setItem] = useState([]);
   const handleSubmit = (event) => {
-    event.preventDefault();
+    c;
     setItem([...items, inputValue]);
     setInputValue("");
   };

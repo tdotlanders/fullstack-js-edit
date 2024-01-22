@@ -29,14 +29,36 @@ function CardComponents(props) {
       <img src={props.image} />
     </div>
   );
-  function formPage() {
-    const [inputValueName, setInputValueName] = useState("");
-    const [inputValueEmail, setInputValueEmail] = useState("");
-    const [inputValueAssunto, setInputValueASsunto] = useState("");
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      alert(`$()`);
-    };
+
+  function FormPage() {
+    const [formFields, setFormFields] = useState({
+      name: "",
+      email: "",
+      notes: "",
+    });
+
+    return (
+      <>
+        <h1>02. Contact Form</h1>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Nome:</label>
+              <input type="text" value={inputValueName} />
+            </div>
+            <div>
+              <label>Email:</label>
+              <input type="text" value={inputValueEmail} />
+            </div>
+            <div>
+              <label>Assunto:</label>
+              <input type="text" value={inputValueAssunto} />
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </>
+    );
   }
 }
 export default function ExercisesPage() {
@@ -53,24 +75,7 @@ export default function ExercisesPage() {
             image={card.image}
           />
         ))}
-      </div>
-      <h1>02. Contact Form</h1>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Nome:</label>
-            <input type="text" value={inputValueName} />
-          </div>
-          <div>
-            <label>Email:</label>
-            <input type="text" value={inputValueEmail} />
-          </div>
-          <div>
-            <label>Assunto:</label>
-            <input type="text" value={inputValueAssunto} onChange={event} />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
+        <FormPage></FormPage>
       </div>
     </div>
   );

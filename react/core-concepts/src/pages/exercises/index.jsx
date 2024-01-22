@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles.css";
 const cardList = [
   {
@@ -28,6 +29,15 @@ function CardComponents(props) {
       <img src={props.image} />
     </div>
   );
+  function formPage() {
+    const [inputValueName, setInputValueName] = useState("");
+    const [inputValueEmail, setInputValueEmail] = useState("");
+    const [inputValueAssunto, setInputValueASsunto] = useState("");
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      alert(`$()`);
+    };
+  }
 }
 export default function ExercisesPage() {
   return (
@@ -43,6 +53,24 @@ export default function ExercisesPage() {
             image={card.image}
           />
         ))}
+      </div>
+      <h1>02. Contact Form</h1>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Nome:</label>
+            <input type="text" value={inputValueName} />
+          </div>
+          <div>
+            <label>Email:</label>
+            <input type="text" value={inputValueEmail} />
+          </div>
+          <div>
+            <label>Assunto:</label>
+            <input type="text" value={inputValueAssunto} onChange={event} />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
   );
